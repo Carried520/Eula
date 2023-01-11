@@ -1,10 +1,11 @@
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
+using Microsoft.Extensions.Logging;
 using Serilog;
-using Serilog.Core;
 using Serilog.Events;
-
+using Serilog.Sinks.SystemConsole.Themes;
+using ILogger = Serilog.ILogger;
 
 namespace Eula.Services.LogService;
 
@@ -12,16 +13,13 @@ public class LogService : ILogService
 {
     private readonly DiscordSocketClient _client;
     private readonly CommandService _command;
+    private readonly ILogger<ILogService> _logger;
 
-    public LogService(DiscordSocketClient client, CommandService command)
+    public LogService(DiscordSocketClient client, CommandService command, ILogger<ILogService> logger)
     {
         _client = client;
         _command = command;
-        Log.Logger = Log.Logger = new LoggerConfiguration()
-            .WriteTo.Async(a => a.Console())
-            .Enrich.FromLogContext()
-            .CreateLogger();
-
+        _logger = logger;
     }
 
     public async Task StartAsync()
@@ -30,25 +28,23 @@ public class LogService : ILogService
         _command.Log += LogDiscordEvents;
         await Task.CompletedTask;
     }
+    
 
-    public ILogger GetLogger => Log.Logger;
 
-
-    private async Task LogDiscordEvents(LogMessage message)
+    private  async Task LogDiscordEvents(LogMessage message)
     {
-        var severity = message.Severity switch
+        LogLevel severity = message.Severity switch
         {
-            LogSeverity.Critical => LogEventLevel.Fatal,
-            LogSeverity.Error => LogEventLevel.Error,
-            LogSeverity.Warning => LogEventLevel.Warning,
-            LogSeverity.Info => LogEventLevel.Information,
-            LogSeverity.Verbose => LogEventLevel.Verbose,
-            LogSeverity.Debug => LogEventLevel.Debug,
-            _ => LogEventLevel.Information
+            LogSeverity.Critical => LogLevel.Critical,
+            LogSeverity.Error => LogLevel.Error,
+            LogSeverity.Warning => LogLevel.Warning,
+            LogSeverity.Info => LogLevel.Information,
+            LogSeverity.Verbose => LogLevel.Trace,
+            LogSeverity.Debug => LogLevel.Debug,
+            _ => LogLevel.Information
         };
-        Log.Write(severity, message.Exception, "[{Source}] {Message} ", message.Source, message.Message);
+
+        _logger.Log(severity, message.Exception, "[{Source}] {Message} ", message.Source, message.Message);
         await Task.CompletedTask;
     }
-    
-    
 }
