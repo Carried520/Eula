@@ -3,4 +3,5 @@
   &lt;Assembly Path="C:\Users\czare\.nuget\packages\serilog\2.12.1-dev-01635\lib\net6.0\Serilog.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=appcommands/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/UserDictionary/Words/=appsettings/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=appsettings/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Griefing/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

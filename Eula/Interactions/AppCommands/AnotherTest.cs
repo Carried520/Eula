@@ -1,4 +1,5 @@
 using Discord.Interactions;
+using Hangfire;
 
 namespace Eula.Interactions.AppCommands;
 

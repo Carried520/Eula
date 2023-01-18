@@ -2,10 +2,6 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using Microsoft.Extensions.Logging;
-using Serilog;
-using Serilog.Events;
-using Serilog.Sinks.SystemConsole.Themes;
-using ILogger = Serilog.ILogger;
 
 namespace Eula.Services.LogService;
 
@@ -43,8 +39,8 @@ public class LogService : ILogService
             LogSeverity.Debug => LogLevel.Debug,
             _ => LogLevel.Information
         };
-
-        _logger.Log(severity, message.Exception, "[{Source}] {Message} ", message.Source, message.Message);
+        
+        _logger.Log(severity, message.Exception, "[{Source}] {Message}", message.Source, message.Message);
         await Task.CompletedTask;
     }
 }

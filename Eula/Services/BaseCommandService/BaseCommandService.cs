@@ -2,7 +2,6 @@ using System.Reflection;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
-using Eula.Services.LogService;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
@@ -13,17 +12,17 @@ public class BaseCommandService : IBaseCommandService
     private readonly DiscordSocketClient _client;
     private readonly CommandService _commandService;
     private readonly IConfiguration _config;
-    private readonly ILogger<IBaseCommandService> _log;
+    private readonly ILogger<IBaseCommandService> _logger;
     private readonly IServiceProvider _services;
 
     public BaseCommandService(DiscordSocketClient client, CommandService commandService, IServiceProvider services,
-        IConfiguration config, ILogger<IBaseCommandService> log)
+        IConfiguration config, ILogger<IBaseCommandService> logger)
     {
         _client = client;
         _commandService = commandService;
         _services = services;
         _config = config;
-        _log = log;
+        _logger = logger;
     }
 
     public async Task StartAsync()
@@ -56,7 +55,7 @@ public class BaseCommandService : IBaseCommandService
 
         if (!result.IsSuccess)
         {
-            _log.LogError("[Command]{exception}", result.Error);
+            _logger.LogError("[Command]{exception}", result.Error);
             await context.Channel.SendMessageAsync($"error: {result}");
         }
     }

@@ -16,4 +16,4 @@ public static class DependencyInjection
 
        return collection.AddLogging(x => x.AddSerilog(logger));
     }
-}
+}   

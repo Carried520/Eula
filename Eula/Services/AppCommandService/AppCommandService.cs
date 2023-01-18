@@ -2,7 +2,7 @@ using System.Reflection;
 using Discord;
 using Discord.Interactions;
 using Discord.WebSocket;
-using Eula.Services.LogService;
+using Eula.Converters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -30,6 +30,7 @@ public class AppCommandService : IAppCommandService
     public async Task StartAsync()
     {
         using IServiceScope scope = _scopeFactory.CreateScope();
+         _commands.AddTypeConverter(typeof(string[]), new StringArrayConverter());
         await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), scope.ServiceProvider);
         _client.InteractionCreated += RespondToInteraction;
         _commands.InteractionExecuted += InteractionExecuted;
@@ -57,6 +58,6 @@ public class AppCommandService : IAppCommandService
         };
 
         _logger.LogError("{error}", response);
-        await context.Interaction.RespondAsync(response);
+        await context.Interaction.ModifyOriginalResponseAsync(x => x.Content = response);
     }
 }
