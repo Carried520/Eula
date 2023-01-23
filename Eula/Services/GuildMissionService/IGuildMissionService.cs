@@ -1,8 +1,7 @@
 using System.Text;
-using Eula.Database.Models;
 using Eula.Interactions.AppCommands.Guild;
 
-namespace Eula.Services.GuildService;
+namespace Eula.Services.GuildMissionService;
 
 public interface IGuildMissionService
 {
@@ -11,9 +10,7 @@ public interface IGuildMissionService
 
     public Task<List<GuildMissionService.PlayerData>> GetAllPlayersAsync();
 
-    public  Task<(StringBuilder family, StringBuilder points, StringBuilder tier)> BuildString();
+    public Task<(StringBuilder family, StringBuilder points, StringBuilder tier)> BuildString();
 
     public Task<int> DeleteAllEntriesAsync();
-
-
 }

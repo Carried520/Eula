@@ -7,9 +7,12 @@ using Eula.DependencyInjectionExtensions;
 using Eula.Services;
 using Eula.Services.AppCommandService;
 using Eula.Services.BaseCommandService;
-using Eula.Services.GuildService;
+using Eula.Services.BasicGameService;
+using Eula.Services.BossService;
+using Eula.Services.GuildMissionService;
 using Eula.Services.LogService;
 using Eula.Services.ReadyService;
+using Fergun.Interactive;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -40,11 +43,17 @@ public static class Program
             .AddSingleton(new InteractionService(client,
                 new InteractionServiceConfig
                     { DefaultRunMode = Discord.Interactions.RunMode.Async, AutoServiceScopes = true }))
+            .AddSingleton<InteractiveService>()
             .AddSerilog()
-            .AddSingleton<IEventListener,EventListener>()
+            .AddSingleton<IEventListener, EventListener>()
+            .AddSingleton<IBossService, BossService>()
+            .AddTransient<IGameService, GameService>()
+            .AddTransient<IQuizService,QuizService>()
             .AddTransient<IGuildMissionService, GuildMissionService>()
             .AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(config["ConnectionStrings:Postgres"]))
             .AddSingleton(config);
+
+        services.AddHttpClient<IQuizService, QuizService>();
 
 
         return services.BuildServiceProvider();

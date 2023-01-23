@@ -17,8 +17,7 @@ public class ApplicationDbContext : DbContext
     {
         
     }
-
-    public DbSet<UserEntity> Users { get; set; } = null!;
+    
     public DbSet<GuildMissionEntity> GuildMissionDatas { get; set; } = null!;
 
 
@@ -27,14 +26,4 @@ public class ApplicationDbContext : DbContext
         optionsBuilder.UseNpgsql(Config.Configuration["ConnectionStrings:Postgres"])
             .LogTo(Console.WriteLine);
     }
-}
-
-public class UserEntity
-{
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    [Key]
-    public int Key { get; set; }
-
-    public ulong Id { get; set; }
-    public int Warns { get; set; }
 }

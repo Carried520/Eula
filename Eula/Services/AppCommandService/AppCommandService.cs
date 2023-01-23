@@ -36,10 +36,20 @@ public class AppCommandService : IAppCommandService
         _commands.InteractionExecuted += InteractionExecuted;
     }
 
-    private async Task RespondToInteraction(SocketInteraction e)
+    private  Task RespondToInteraction(SocketInteraction e)
     {
-        var ctx = new SocketInteractionContext(_client, e);
-        await _commands.ExecuteCommandAsync(ctx, _services);
+        _ = Task.Run(async () =>
+        {
+            
+                var ctx = new SocketInteractionContext(_client, e);
+                await _commands.ExecuteCommandAsync(ctx, _services);
+            
+            
+           
+        });
+        
+        return Task.CompletedTask;
+        
     }
 
     private async Task InteractionExecuted(ICommandInfo info, IInteractionContext context, IResult result)

@@ -39,6 +39,7 @@ public class BaseCommandService : IBaseCommandService
         var argPos = 0;
 
         string? generalPrefix = Program.IsDebug ? _config["Prefix:Debug"] : _config["Prefix:Build"];
+        
         bool isGeneralPrefixPresent =
             msg.HasStringPrefix(generalPrefix, ref argPos, StringComparison.OrdinalIgnoreCase);
 

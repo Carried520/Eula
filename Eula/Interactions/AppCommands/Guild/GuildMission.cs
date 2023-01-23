@@ -2,7 +2,7 @@ using System.Globalization;
 using System.Text;
 using Discord;
 using Discord.Interactions;
-using Eula.Services.GuildService;
+using Eula.Services.GuildMissionService;
 using Eula.Validators;
 using FluentValidation;
 using JetBrains.Annotations;

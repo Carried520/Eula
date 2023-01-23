@@ -4,7 +4,28 @@
     <projectFile>Eula/Eula.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c734aaa0-2de6-497d-b801-6d913e01b211" name="Changes" comment="Update Services and Architecture">
+    <list default="true" id="c734aaa0-2de6-497d-b801-6d913e01b211" name="Changes" comment="Exclude">
+      <change afterPath="$PROJECT_DIR$/Eula/Interactions/AppCommands/BaseGame.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eula/ListExtensions/Order.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eula/Services/BasicGameService/GameService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eula/Services/BasicGameService/IGameService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eula/Services/BasicGameService/IQuizService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eula/Services/BasicGameService/QuizService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eula/Services/BossService/BossParser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eula/Services/BossService/BossSchedule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eula/Services/BossService/BossService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eula/Services/BossService/BossTimer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eula/Services/BossService/IBossService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eula/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eula/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eula/Database/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eula/Database/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eula/Eula.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Eula/Eula.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eula/Interactions/AppCommands/Guild/GuildMission.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eula/Interactions/AppCommands/Guild/GuildMission.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eula/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eula/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eula/Services/AppCommandService/AppCommandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eula/Services/AppCommandService/AppCommandService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eula/Services/BaseCommandService/BaseCommandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eula/Services/BaseCommandService/BaseCommandService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eula/Services/GuildService/GuildMissionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eula/Services/GuildMissionService/GuildMissionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eula/Services/GuildService/IGuildMissionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eula/Services/GuildMissionService/IGuildMissionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eula/Services/ReadyService/ReadyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eula/Services/ReadyService/ReadyService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eula/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Eula/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,11 +43,16 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/110d02838e514a6eadf8b7b3b3dee51ea8400/03/61db4cc8/Optional`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/110d02838e514a6eadf8b7b3b3dee51ea8400/37/ba8062e9/AsyncEvent`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/110d02838e514a6eadf8b7b3b3dee51ea8400/6d/f2bf2c2b/ComponentBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/110d02838e514a6eadf8b7b3b3dee51ea8400/80/339af2a4/Emote.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1557e2ca11ca4537a79c20676a40fe853b600/e7/3e947542/InteractionServiceConfig.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/382049698ae94833a7769d39460acfd7bf200/5f/2e03a521/DiscordSocketClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/382049698ae94833a7769d39460acfd7bf200/8e/04e735bb/BaseSocketClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/382049698ae94833a7769d39460acfd7bf200/d5/6ff8f82e/DiscordShardedClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/382049698ae94833a7769d39460acfd7bf200/de/88c2d1c4/SocketMessageComponent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a232bc19d0f4427383091d621bc154483e00/ba/377d4530/HangfireServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/66ae93fcc0ef9cee396cc42247a9b73972cd47fc696276ee954658c385c1845/HttpUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/833e9913cfea894121d36df3dbe63f69583989396ff52191a29aa53a4dd49941/Cast.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8ea1fcebf71d4ec73d2e785ed215f67d3b976e148eb514e4013334da18fa/ExtensionsInternal.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b646c4e8bba31fb63edcb81a7a973131aabd96f8f65230dab63e3df4833a/LoggingServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
@@ -40,7 +66,7 @@
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2JrmYW8mOwPvCBMHrwnIk3mZoYt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -117,7 +143,12 @@
       <workItem from="1673967649895" duration="624000" />
       <workItem from="1673978695163" duration="5868000" />
       <workItem from="1674039082663" duration="6999000" />
-      <workItem from="1674051996025" duration="7452000" />
+      <workItem from="1674051996025" duration="18747000" />
+      <workItem from="1674133459568" duration="18457000" />
+      <workItem from="1674226140354" duration="7661000" />
+      <workItem from="1674263141151" duration="1303000" />
+      <workItem from="1674399244769" duration="23978000" />
+      <workItem from="1674437735252" duration="2458000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1672971087621</created>
@@ -140,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674070997368</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Exclude">
+      <created>1674071527465</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674071527465</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +203,7 @@
     <MESSAGE value="Init" />
     <MESSAGE value="Update Logger to make it more modularized.Make types more readable (remove var where its unclear)." />
     <MESSAGE value="Update Services and Architecture" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Services and Architecture" />
+    <MESSAGE value="Exclude" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exclude" />
   </component>
 </project>
